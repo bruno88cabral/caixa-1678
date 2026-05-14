@@ -6,13 +6,14 @@
 
 const mediaParaPassar = 6;
 
-function calcularMedia(notas) {
-  var media = (notas[0] + notas[1] + notas[2]) / 3;
+export function calcularMedia(notas) {
+  var somaNotas = notas.reduce((acumulador, nota) => acumulador + nota, 0);
+  var media = somaNotas / notas.length;
 
   return media;
 }
 
-function verificarAprovacao(notas) {
+export function verificarAprovacao(notas) {
   const media = calcularMedia(notas);
 
   if (media >= mediaParaPassar) {

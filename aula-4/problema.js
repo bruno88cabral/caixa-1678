@@ -1,4 +1,4 @@
-const Escola = [
+const escola = [
   { nome: "Ana Clara", idade: 7, notas: [8, 9, 7, 10] },
   { nome: "Lucas Gabriel", idade: 7, notas: [7, 6, 8, 9] },
   { nome: "Mariana Silva", idade: 7, notas: [10, 9, 8, 10] },
@@ -72,3 +72,23 @@ const Escola = [
   { nome: "Thiago Oliveira", idade: 15, notas: [7, 6, 8, 7] },
   { nome: "Carolina Fernandes", idade: 15, notas: [10, 9, 8, 10] },
 ];
+
+export function calcularMedia(notas) {
+  var somaNotas = notas.reduce((acumulador, nota) => acumulador + nota, 0);
+  var media = somaNotas / notas.length;
+
+  return media;
+}
+
+const resultadoEscola = escola.map((aluno) => {
+  const media = calcularMedia(aluno.notas);
+
+  return {
+    nome: aluno.nome,
+    idade: aluno.idade,
+    notas: aluno.notas,
+    media: media,
+  };
+});
+
+console.log(resultadoEscola);
