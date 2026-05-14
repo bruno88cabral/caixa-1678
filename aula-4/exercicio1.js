@@ -1,3 +1,9 @@
+// ### 2. Percorrendo a lista de contato
+
+// Crie um laço de repetição que percorra toda a lista de contatos e mostre uma frase contento Nome, Telefone, Endereço e data de nascimento, exemplo:
+
+// Bonus: Utilizar template string
+
 const listaContatos = [
   {
     nome: "Ana Beatriz Oliveira",
