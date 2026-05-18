@@ -83,11 +83,14 @@ export function calcularMedia(notas) {
 const resultadoEscola = escola.map((aluno) => {
   const media = calcularMedia(aluno.notas);
 
+  const aprovado = media >= 6;
+
   return {
     nome: aluno.nome,
     idade: aluno.idade,
     notas: aluno.notas,
     media: media,
+    aprovado: aprovado,
   };
 });
 
