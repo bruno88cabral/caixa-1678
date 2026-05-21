@@ -92,4 +92,8 @@ const resultadoEscola = escola.map((aluno) => {
   };
 });
 
-console.log(resultadoEscola);
+const filtered = resultadoEscola.some((aluno) => {
+  return aluno.aprovado;
+});
+
+console.log(filtered);

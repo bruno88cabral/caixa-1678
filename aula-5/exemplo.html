@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulário</title>
+
+    <style>
+      section {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        padding: 24px;
+      }
+
+      .search {
+        margin-top: 36px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="nome">Idade:</label>
+      <input type="text" id="idade" name="idade" required />
+
+      <label for="nome">Telefone:</label>
+      <input type="text" id="telefone" name="telefone" required />
+
+      <label for="nome">Imagem:</label>
+      <input type="text" id="imagem" name="imagem" required />
+
+      <label for="data">Imagem:</label>
+      <input type="date" id="data" name="data" required />
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="search">
+      <label for="search">Buscar pelo nome</label>
+      <input type="text" id="search" />
+    </div>
+
+    <section></section>
+
+    <script src="exemplo.js"></script>
+  </body>
+</html>

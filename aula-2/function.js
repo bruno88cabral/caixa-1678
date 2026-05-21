@@ -48,16 +48,16 @@
 
 calcularMediaDaTurma();
 
-function calcularMedia(nome, n1, n2, n3) {
-  var media = (n1 + n2 + n3) / 3;
+function calcularMedia(nome, n1, n2, n3, n4, n5) {
+  var media = (n1 + n2 + n3 + n4 + n5) / 5;
 
   return `A média do ${nome} é: ${media}`;
 }
 
 const calcularMediaDaTurma = () => {
-  console.log(calcularMedia("tiago", 4, 5, 6));
-  console.log(calcularMedia("joao", 10, 9, 8));
-  console.log(calcularMedia("pedro", 6, 3, 1));
+  console.log(calcularMedia("tiago", 4, 5, 6, 1, 4));
+  console.log(calcularMedia("joao", 10, 9, 8, 6, 9));
+  console.log(calcularMedia("pedro", 6, 3, 1, 4, 1));
 
   return "que aula doida";
 };

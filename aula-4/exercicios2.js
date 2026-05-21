@@ -29,7 +29,7 @@ console.log(contagemMap);
 for (const [key, value] of contagemMap.entries()) {
   if (value > maisRepetido.value) {
     maisRepetido.key = key;
-    maisRepetido.value = value;
+    maisRepetido = value;
   }
 }
 
