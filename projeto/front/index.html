@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo CRUD com Formulário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #333; }
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 12px;
+            padding: 10px 16px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover { background: #1d4ed8; }
+        button.secundario { background: #6b7280; }
+        button.perigo { background: #dc2626; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        th { background: #f3f4f6; }
+        .concluida { text-decoration: line-through; color: #888; }
+    </style>
+</head>
+<body>
+    <h1>📋 Lista de Tarefas</h1>
+
+    <!-- FORMULÁRIO de cadastro / edição -->
+    <div class="card">
+        <h2 id="tituloForm">Nova tarefa</h2>
+
+        <!-- input escondido que guarda o ID quando estamos editando -->
+        <input type="hidden" id="tarefaId">
+
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" placeholder="Ex: Estudar JavaScript">
+
+        <label for="prioridade">Prioridade</label>
+        <select id="prioridade">
+            <option value="alta">Alta</option>
+            <option value="media">Média</option>
+            <option value="baixa">Baixa</option>
+        </select>
+
+        <button onclick="salvarTarefa()">Salvar</button>
+        <button class="secundario" onclick="limparFormulario()">Limpar</button>
+    </div>
+
+    <!-- FILTRO / busca -->
+    <div class="card">
+        <label for="filtro">🔍 Buscar por descrição</label>
+        <input type="text" id="filtro" oninput="renderizarTarefas()" placeholder="Digite para filtrar...">
+    </div>
+
+    <!-- TABELA com as tarefas -->
+    <div class="card">
+        <h2>Tarefas cadastradas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Descrição</th>
+                    <th>Prioridade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaTarefas">
+                <!-- preenchido via JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
